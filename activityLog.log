@@ -1,0 +1,1818 @@
+19 Jul 2021 12:15:19,354 main - Loaded raw data: {"swagger":"2.0","info":{"description":"This is siddhu description swagger example","version":"1.1","title":"This is title for siddhu swagger example"},"host":"localhost:8080","basePath":"/","tags":[{"name":"basic-error-controller","description":"Basic Error Controller"},{"name":"index-controller","description":"Index Controller"}],"paths":{"/deleteEmployee/{id}":{"delete":{"tags":["index-controller"],"summary":"To post the employee","operationId":"deleteEmployeeUsingDELETE","produces":["*/*"],"parameters":[{"name":"id","in":"path","description":"id","required":true,"type":"string"}],"responses":{"200":{"description":"OK","schema":{"$ref":"#/definitions/Employee"}},"204":{"description":"No Content"},"401":{"description":"Unauthorized"},"403":{"description":"Forbidden"}},"deprecated":false}},"/error":{"get":{"tags":["basic-error-controller"],"summary":"errorHtml","operationId":"errorHtmlUsingGET","produces":["text/html"],"responses":{"200":{"description":"OK","schema":{"$ref":"#/definitions/ModelAndView"}},"401":{"description":"Unauthorized"},"403":{"description":"Forbidden"},"404":{"description":"Not Found"}},"deprecated":false},"head":{"tags":["basic-error-controller"],"summary":"errorHtml","operationId":"errorHtmlUsingHEAD","consumes":["application/json"],"produces":["text/html"],"responses":{"200":{"description":"OK","schema":{"$ref":"#/definitions/ModelAndView"}},"204":{"description":"No Content"},"401":{"description":"Unauthorized"},"403":{"description":"Forbidden"}},"deprecated":false},"post":{"tags":["basic-error-controller"],"summary":"errorHtml","operationId":"errorHtmlUsingPOST","consumes":["application/json"],"produces":["text/html"],"responses":{"200":{"description":"OK","schema":{"$ref":"#/definitions/ModelAndView"}},"201":{"description":"Created"},"401":{"description":"Unauthorized"},"403":{"description":"Forbidden"},"404":{"description":"Not Found"}},"deprecated":false},"put":{"tags":["basic-error-controller"],"summary":"errorHtml","operationId":"errorHtmlUsingPUT","consumes":["application/json"],"produces":["text/html"],"responses":{"200":{"description":"OK","schema":{"$ref":"#/definitions/ModelAndView"}},"201":{"description":"Created"},"401":{"description":"Unauthorized"},"403":{"description":"Forbidden"},"404":{"description":"Not Found"}},"deprecated":false},"delete":{"tags":["basic-error-controller"],"summary":"errorHtml","operationId":"errorHtmlUsingDELETE","produces":["text/html"],"responses":{"200":{"description":"OK","schema":{"$ref":"#/definitions/ModelAndView"}},"204":{"description":"No Content"},"401":{"description":"Unauthorized"},"403":{"description":"Forbidden"}},"deprecated":false},"options":{"tags":["basic-error-controller"],"summary":"errorHtml","operationId":"errorHtmlUsingOPTIONS","consumes":["application/json"],"produces":["text/html"],"responses":{"200":{"description":"OK","schema":{"$ref":"#/definitions/ModelAndView"}},"204":{"description":"No Content"},"401":{"description":"Unauthorized"},"403":{"description":"Forbidden"}},"deprecated":false},"patch":{"tags":["basic-error-controller"],"summary":"errorHtml","operationId":"errorHtmlUsingPATCH","consumes":["application/json"],"produces":["text/html"],"responses":{"200":{"description":"OK","schema":{"$ref":"#/definitions/ModelAndView"}},"204":{"description":"No Content"},"401":{"description":"Unauthorized"},"403":{"description":"Forbidden"}},"deprecated":false}},"/getEmployee":{"get":{"tags":["index-controller"],"summary":"To get the employee","operationId":"getEmployeeUsingGET","produces":["*/*"],"responses":{"200":{"description":"OK","schema":{"$ref":"#/definitions/Employee"}},"401":{"description":"Unauthorized"},"403":{"description":"Forbidden"},"404":{"description":"Not Found"}},"deprecated":false}},"/insertEmployee/{id}/{name}":{"post":{"tags":["index-controller"],"summary":"To post the employee","operationId":"insertEmployeeUsingPOST","consumes":["application/json"],"produces":["*/*"],"parameters":[{"name":"id","in":"path","description":"id","required":true,"type":"string"},{"name":"name","in":"path","description":"name","required":true,"type":"string"}],"responses":{"200":{"description":"OK","schema":{"$ref":"#/definitions/Employee"}},"201":{"description":"Created"},"401":{"description":"Unauthorized"},"403":{"description":"Forbidden"},"404":{"description":"Not Found"}},"deprecated":false}},"/updateEmployee/{id}/{name}":{"put":{"tags":["index-controller"],"summary":"To post the employee","operationId":"updateEmployeeUsingPUT","consumes":["application/json"],"produces":["*/*"],"parameters":[{"name":"id","in":"path","description":"id","required":true,"type":"string"},{"name":"name","in":"path","description":"name","required":true,"type":"string"}],"responses":{"200":{"description":"OK","schema":{"$ref":"#/definitions/Employee"}},"201":{"description":"Created"},"401":{"description":"Unauthorized"},"403":{"description":"Forbidden"},"404":{"description":"Not Found"}},"deprecated":false}}},"definitions":{"Employee":{"type":"object","required":["id","name"],"properties":{"id":{"type":"string","description":"1"},"name":{"type":"string","description":"siddhu"}},"title":"Employee","description":"This is employee model"},"ModelAndView":{"type":"object","properties":{"empty":{"type":"boolean"},"model":{"type":"object"},"modelMap":{"type":"object","additionalProperties":{"type":"object"}},"reference":{"type":"boolean"},"status":{"type":"string","enum":["100 CONTINUE","101 SWITCHING_PROTOCOLS","102 PROCESSING","103 CHECKPOINT","200 OK","201 CREATED","202 ACCEPTED","203 NON_AUTHORITATIVE_INFORMATION","204 NO_CONTENT","205 RESET_CONTENT","206 PARTIAL_CONTENT","207 MULTI_STATUS","208 ALREADY_REPORTED","226 IM_USED","300 MULTIPLE_CHOICES","301 MOVED_PERMANENTLY","302 FOUND","302 MOVED_TEMPORARILY","303 SEE_OTHER","304 NOT_MODIFIED","305 USE_PROXY","307 TEMPORARY_REDIRECT","308 PERMANENT_REDIRECT","400 BAD_REQUEST","401 UNAUTHORIZED","402 PAYMENT_REQUIRED","403 FORBIDDEN","404 NOT_FOUND","405 METHOD_NOT_ALLOWED","406 NOT_ACCEPTABLE","407 PROXY_AUTHENTICATION_REQUIRED","408 REQUEST_TIMEOUT","409 CONFLICT","410 GONE","411 LENGTH_REQUIRED","412 PRECONDITION_FAILED","413 PAYLOAD_TOO_LARGE","413 REQUEST_ENTITY_TOO_LARGE","414 URI_TOO_LONG","414 REQUEST_URI_TOO_LONG","415 UNSUPPORTED_MEDIA_TYPE","416 REQUESTED_RANGE_NOT_SATISFIABLE","417 EXPECTATION_FAILED","418 I_AM_A_TEAPOT","419 INSUFFICIENT_SPACE_ON_RESOURCE","420 METHOD_FAILURE","421 DESTINATION_LOCKED","422 UNPROCESSABLE_ENTITY","423 LOCKED","424 FAILED_DEPENDENCY","425 TOO_EARLY","426 UPGRADE_REQUIRED","428 PRECONDITION_REQUIRED","429 TOO_MANY_REQUESTS","431 REQUEST_HEADER_FIELDS_TOO_LARGE","451 UNAVAILABLE_FOR_LEGAL_REASONS","500 INTERNAL_SERVER_ERROR","501 NOT_IMPLEMENTED","502 BAD_GATEWAY","503 SERVICE_UNAVAILABLE","504 GATEWAY_TIMEOUT","505 HTTP_VERSION_NOT_SUPPORTED","506 VARIANT_ALSO_NEGOTIATES","507 INSUFFICIENT_STORAGE","508 LOOP_DETECTED","509 BANDWIDTH_LIMIT_EXCEEDED","510 NOT_EXTENDED","511 NETWORK_AUTHENTICATION_REQUIRED"]},"view":{"$ref":"#/definitions/View"},"viewName":{"type":"string"}},"title":"ModelAndView"},"View":{"type":"object","properties":{"contentType":{"type":"string"}},"title":"View"}}}
+19 Jul 2021 12:15:19,766 main - ------------------This is siddhu description swagger example
+19 Jul 2021 12:15:51,121 main - Loaded raw data: {"swagger":"2.0","info":{"description":"This is siddhu description swagger example","version":"1.1","title":"This is title for siddhu swagger example"},"host":"localhost:8080","basePath":"/","tags":[{"name":"basic-error-controller","description":"Basic Error Controller"},{"name":"index-controller","description":"Index Controller"}],"paths":{"/deleteEmployee/{id}":{"delete":{"tags":["index-controller"],"summary":"To post the employee","operationId":"deleteEmployeeUsingDELETE","produces":["*/*"],"parameters":[{"name":"id","in":"path","description":"id","required":true,"type":"string"}],"responses":{"200":{"description":"OK","schema":{"$ref":"#/definitions/Employee"}},"204":{"description":"No Content"},"401":{"description":"Unauthorized"},"403":{"description":"Forbidden"}},"deprecated":false}},"/error":{"get":{"tags":["basic-error-controller"],"summary":"errorHtml","operationId":"errorHtmlUsingGET","produces":["text/html"],"responses":{"200":{"description":"OK","schema":{"$ref":"#/definitions/ModelAndView"}},"401":{"description":"Unauthorized"},"403":{"description":"Forbidden"},"404":{"description":"Not Found"}},"deprecated":false},"head":{"tags":["basic-error-controller"],"summary":"errorHtml","operationId":"errorHtmlUsingHEAD","consumes":["application/json"],"produces":["text/html"],"responses":{"200":{"description":"OK","schema":{"$ref":"#/definitions/ModelAndView"}},"204":{"description":"No Content"},"401":{"description":"Unauthorized"},"403":{"description":"Forbidden"}},"deprecated":false},"post":{"tags":["basic-error-controller"],"summary":"errorHtml","operationId":"errorHtmlUsingPOST","consumes":["application/json"],"produces":["text/html"],"responses":{"200":{"description":"OK","schema":{"$ref":"#/definitions/ModelAndView"}},"201":{"description":"Created"},"401":{"description":"Unauthorized"},"403":{"description":"Forbidden"},"404":{"description":"Not Found"}},"deprecated":false},"put":{"tags":["basic-error-controller"],"summary":"errorHtml","operationId":"errorHtmlUsingPUT","consumes":["application/json"],"produces":["text/html"],"responses":{"200":{"description":"OK","schema":{"$ref":"#/definitions/ModelAndView"}},"201":{"description":"Created"},"401":{"description":"Unauthorized"},"403":{"description":"Forbidden"},"404":{"description":"Not Found"}},"deprecated":false},"delete":{"tags":["basic-error-controller"],"summary":"errorHtml","operationId":"errorHtmlUsingDELETE","produces":["text/html"],"responses":{"200":{"description":"OK","schema":{"$ref":"#/definitions/ModelAndView"}},"204":{"description":"No Content"},"401":{"description":"Unauthorized"},"403":{"description":"Forbidden"}},"deprecated":false},"options":{"tags":["basic-error-controller"],"summary":"errorHtml","operationId":"errorHtmlUsingOPTIONS","consumes":["application/json"],"produces":["text/html"],"responses":{"200":{"description":"OK","schema":{"$ref":"#/definitions/ModelAndView"}},"204":{"description":"No Content"},"401":{"description":"Unauthorized"},"403":{"description":"Forbidden"}},"deprecated":false},"patch":{"tags":["basic-error-controller"],"summary":"errorHtml","operationId":"errorHtmlUsingPATCH","consumes":["application/json"],"produces":["text/html"],"responses":{"200":{"description":"OK","schema":{"$ref":"#/definitions/ModelAndView"}},"204":{"description":"No Content"},"401":{"description":"Unauthorized"},"403":{"description":"Forbidden"}},"deprecated":false}},"/getEmployee":{"get":{"tags":["index-controller"],"summary":"To get the employee","operationId":"getEmployeeUsingGET","produces":["*/*"],"responses":{"200":{"description":"OK","schema":{"$ref":"#/definitions/Employee"}},"401":{"description":"Unauthorized"},"403":{"description":"Forbidden"},"404":{"description":"Not Found"}},"deprecated":false}},"/insertEmployee/{id}/{name}":{"post":{"tags":["index-controller"],"summary":"To post the employee","operationId":"insertEmployeeUsingPOST","consumes":["application/json"],"produces":["*/*"],"parameters":[{"name":"id","in":"path","description":"id","required":true,"type":"string"},{"name":"name","in":"path","description":"name","required":true,"type":"string"}],"responses":{"200":{"description":"OK","schema":{"$ref":"#/definitions/Employee"}},"201":{"description":"Created"},"401":{"description":"Unauthorized"},"403":{"description":"Forbidden"},"404":{"description":"Not Found"}},"deprecated":false}},"/updateEmployee/{id}/{name}":{"put":{"tags":["index-controller"],"summary":"To post the employee","operationId":"updateEmployeeUsingPUT","consumes":["application/json"],"produces":["*/*"],"parameters":[{"name":"id","in":"path","description":"id","required":true,"type":"string"},{"name":"name","in":"path","description":"name","required":true,"type":"string"}],"responses":{"200":{"description":"OK","schema":{"$ref":"#/definitions/Employee"}},"201":{"description":"Created"},"401":{"description":"Unauthorized"},"403":{"description":"Forbidden"},"404":{"description":"Not Found"}},"deprecated":false}}},"definitions":{"Employee":{"type":"object","required":["id","name"],"properties":{"id":{"type":"string","description":"1"},"name":{"type":"string","description":"siddhu"}},"title":"Employee","description":"This is employee model"},"ModelAndView":{"type":"object","properties":{"empty":{"type":"boolean"},"model":{"type":"object"},"modelMap":{"type":"object","additionalProperties":{"type":"object"}},"reference":{"type":"boolean"},"status":{"type":"string","enum":["100 CONTINUE","101 SWITCHING_PROTOCOLS","102 PROCESSING","103 CHECKPOINT","200 OK","201 CREATED","202 ACCEPTED","203 NON_AUTHORITATIVE_INFORMATION","204 NO_CONTENT","205 RESET_CONTENT","206 PARTIAL_CONTENT","207 MULTI_STATUS","208 ALREADY_REPORTED","226 IM_USED","300 MULTIPLE_CHOICES","301 MOVED_PERMANENTLY","302 FOUND","302 MOVED_TEMPORARILY","303 SEE_OTHER","304 NOT_MODIFIED","305 USE_PROXY","307 TEMPORARY_REDIRECT","308 PERMANENT_REDIRECT","400 BAD_REQUEST","401 UNAUTHORIZED","402 PAYMENT_REQUIRED","403 FORBIDDEN","404 NOT_FOUND","405 METHOD_NOT_ALLOWED","406 NOT_ACCEPTABLE","407 PROXY_AUTHENTICATION_REQUIRED","408 REQUEST_TIMEOUT","409 CONFLICT","410 GONE","411 LENGTH_REQUIRED","412 PRECONDITION_FAILED","413 PAYLOAD_TOO_LARGE","413 REQUEST_ENTITY_TOO_LARGE","414 URI_TOO_LONG","414 REQUEST_URI_TOO_LONG","415 UNSUPPORTED_MEDIA_TYPE","416 REQUESTED_RANGE_NOT_SATISFIABLE","417 EXPECTATION_FAILED","418 I_AM_A_TEAPOT","419 INSUFFICIENT_SPACE_ON_RESOURCE","420 METHOD_FAILURE","421 DESTINATION_LOCKED","422 UNPROCESSABLE_ENTITY","423 LOCKED","424 FAILED_DEPENDENCY","425 TOO_EARLY","426 UPGRADE_REQUIRED","428 PRECONDITION_REQUIRED","429 TOO_MANY_REQUESTS","431 REQUEST_HEADER_FIELDS_TOO_LARGE","451 UNAVAILABLE_FOR_LEGAL_REASONS","500 INTERNAL_SERVER_ERROR","501 NOT_IMPLEMENTED","502 BAD_GATEWAY","503 SERVICE_UNAVAILABLE","504 GATEWAY_TIMEOUT","505 HTTP_VERSION_NOT_SUPPORTED","506 VARIANT_ALSO_NEGOTIATES","507 INSUFFICIENT_STORAGE","508 LOOP_DETECTED","509 BANDWIDTH_LIMIT_EXCEEDED","510 NOT_EXTENDED","511 NETWORK_AUTHENTICATION_REQUIRED"]},"view":{"$ref":"#/definitions/View"},"viewName":{"type":"string"}},"title":"ModelAndView"},"View":{"type":"object","properties":{"contentType":{"type":"string"}},"title":"View"}}}
+19 Jul 2021 12:15:51,535 main - ------------------class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: This is title for siddhu swagger example
+        description: This is siddhu description swagger example
+        termsOfService: null
+        contact: null
+        license: null
+        version: 1.1
+    }
+    externalDocs: null
+    servers: [class Server {
+        url: //localhost:8080/
+        description: null
+        variables: null
+    }]
+    security: null
+    tags: [class Tag {
+        name: basic-error-controller
+        description: Basic Error Controller
+        externalDocs: null
+    }, class Tag {
+        name: index-controller
+        description: Index Controller
+        externalDocs: null
+    }]
+    paths: class Paths {
+        {/deleteEmployee/{id}=class PathItem {
+            summary: null
+            description: null
+            get: null
+            put: null
+            post: null
+            delete: class Operation {
+                tags: [index-controller]
+                summary: To post the employee
+                description: null
+                externalDocs: null
+                operationId: deleteEmployeeUsingDELETE
+                parameters: [class Parameter {
+                    name: id
+                    in: path
+                    description: id
+                    required: true
+                    deprecated: null
+                    allowEmptyValue: null
+                    style: null
+                    explode: null
+                    allowReserved: null
+                    schema: class StringSchema {
+                        class Schema {
+                            type: string
+                            format: null
+                            $ref: null
+                            description: null
+                            title: null
+                            multipleOf: null
+                            maximum: null
+                            exclusiveMaximum: null
+                            minimum: null
+                            exclusiveMinimum: null
+                            maxLength: null
+                            minLength: null
+                            pattern: null
+                            maxItems: null
+                            minItems: null
+                            uniqueItems: null
+                            maxProperties: null
+                            minProperties: null
+                            required: null
+                            not: null
+                            properties: null
+                            additionalProperties: null
+                            nullable: null
+                            readOnly: null
+                            writeOnly: null
+                            example: null
+                            externalDocs: null
+                            deprecated: null
+                            discriminator: null
+                            xml: null
+                        }
+                    }
+                    examples: null
+                    example: null
+                    content: null
+                    $ref: null
+                }]
+                requestBody: null
+                responses: class ApiResponses {
+                    {200=class ApiResponse {
+                        description: OK
+                        headers: null
+                        content: class Content {
+                            {*/*=class MediaType {
+                                schema: class Schema {
+                                    type: null
+                                    format: null
+                                    $ref: #/components/schemas/Employee
+                                    description: null
+                                    title: null
+                                    multipleOf: null
+                                    maximum: null
+                                    exclusiveMaximum: null
+                                    minimum: null
+                                    exclusiveMinimum: null
+                                    maxLength: null
+                                    minLength: null
+                                    pattern: null
+                                    maxItems: null
+                                    minItems: null
+                                    uniqueItems: null
+                                    maxProperties: null
+                                    minProperties: null
+                                    required: null
+                                    not: null
+                                    properties: null
+                                    additionalProperties: null
+                                    nullable: null
+                                    readOnly: null
+                                    writeOnly: null
+                                    example: null
+                                    externalDocs: null
+                                    deprecated: null
+                                    discriminator: null
+                                    xml: null
+                                }
+                                examples: null
+                                example: null
+                                encoding: null
+                            }}
+                        }
+                        links: null
+                        extensions: {}
+                        $ref: null
+                    }, 204=class ApiResponse {
+                        description: No Content
+                        headers: null
+                        content: class Content {
+                            {}
+                        }
+                        links: null
+                        extensions: {}
+                        $ref: null
+                    }, 401=class ApiResponse {
+                        description: Unauthorized
+                        headers: null
+                        content: class Content {
+                            {}
+                        }
+                        links: null
+                        extensions: {}
+                        $ref: null
+                    }, 403=class ApiResponse {
+                        description: Forbidden
+                        headers: null
+                        content: class Content {
+                            {}
+                        }
+                        links: null
+                        extensions: {}
+                        $ref: null
+                    }}
+                    extensions: null
+                }
+                callbacks: null
+                deprecated: false
+                security: null
+                servers: null
+            }
+            options: null
+            head: null
+            patch: null
+            trace: null
+            servers: null
+            parameters: null
+            $ref: null
+        }, /error=class PathItem {
+            summary: null
+            description: null
+            get: class Operation {
+                tags: [basic-error-controller]
+                summary: errorHtml
+                description: null
+                externalDocs: null
+                operationId: errorHtmlUsingGET
+                parameters: null
+                requestBody: null
+                responses: class ApiResponses {
+                    {200=class ApiResponse {
+                        description: OK
+                        headers: null
+                        content: class Content {
+                            {text/html=class MediaType {
+                                schema: class Schema {
+                                    type: null
+                                    format: null
+                                    $ref: #/components/schemas/ModelAndView
+                                    description: null
+                                    title: null
+                                    multipleOf: null
+                                    maximum: null
+                                    exclusiveMaximum: null
+                                    minimum: null
+                                    exclusiveMinimum: null
+                                    maxLength: null
+                                    minLength: null
+                                    pattern: null
+                                    maxItems: null
+                                    minItems: null
+                                    uniqueItems: null
+                                    maxProperties: null
+                                    minProperties: null
+                                    required: null
+                                    not: null
+                                    properties: null
+                                    additionalProperties: null
+                                    nullable: null
+                                    readOnly: null
+                                    writeOnly: null
+                                    example: null
+                                    externalDocs: null
+                                    deprecated: null
+                                    discriminator: null
+                                    xml: null
+                                }
+                                examples: null
+                                example: null
+                                encoding: null
+                            }}
+                        }
+                        links: null
+                        extensions: {}
+                        $ref: null
+                    }, 401=class ApiResponse {
+                        description: Unauthorized
+                        headers: null
+                        content: class Content {
+                            {}
+                        }
+                        links: null
+                        extensions: {}
+                        $ref: null
+                    }, 403=class ApiResponse {
+                        description: Forbidden
+                        headers: null
+                        content: class Content {
+                            {}
+                        }
+                        links: null
+                        extensions: {}
+                        $ref: null
+                    }, 404=class ApiResponse {
+                        description: Not Found
+                        headers: null
+                        content: class Content {
+                            {}
+                        }
+                        links: null
+                        extensions: {}
+                        $ref: null
+                    }}
+                    extensions: null
+                }
+                callbacks: null
+                deprecated: false
+                security: null
+                servers: null
+            }
+            put: class Operation {
+                tags: [basic-error-controller]
+                summary: errorHtml
+                description: null
+                externalDocs: null
+                operationId: errorHtmlUsingPUT
+                parameters: null
+                requestBody: null
+                responses: class ApiResponses {
+                    {200=class ApiResponse {
+                        description: OK
+                        headers: null
+                        content: class Content {
+                            {text/html=class MediaType {
+                                schema: class Schema {
+                                    type: null
+                                    format: null
+                                    $ref: #/components/schemas/ModelAndView
+                                    description: null
+                                    title: null
+                                    multipleOf: null
+                                    maximum: null
+                                    exclusiveMaximum: null
+                                    minimum: null
+                                    exclusiveMinimum: null
+                                    maxLength: null
+                                    minLength: null
+                                    pattern: null
+                                    maxItems: null
+                                    minItems: null
+                                    uniqueItems: null
+                                    maxProperties: null
+                                    minProperties: null
+                                    required: null
+                                    not: null
+                                    properties: null
+                                    additionalProperties: null
+                                    nullable: null
+                                    readOnly: null
+                                    writeOnly: null
+                                    example: null
+                                    externalDocs: null
+                                    deprecated: null
+                                    discriminator: null
+                                    xml: null
+                                }
+                                examples: null
+                                example: null
+                                encoding: null
+                            }}
+                        }
+                        links: null
+                        extensions: {}
+                        $ref: null
+                    }, 201=class ApiResponse {
+                        description: Created
+                        headers: null
+                        content: class Content {
+                            {}
+                        }
+                        links: null
+                        extensions: {}
+                        $ref: null
+                    }, 401=class ApiResponse {
+                        description: Unauthorized
+                        headers: null
+                        content: class Content {
+                            {}
+                        }
+                        links: null
+                        extensions: {}
+                        $ref: null
+                    }, 403=class ApiResponse {
+                        description: Forbidden
+                        headers: null
+                        content: class Content {
+                            {}
+                        }
+                        links: null
+                        extensions: {}
+                        $ref: null
+                    }, 404=class ApiResponse {
+                        description: Not Found
+                        headers: null
+                        content: class Content {
+                            {}
+                        }
+                        links: null
+                        extensions: {}
+                        $ref: null
+                    }}
+                    extensions: null
+                }
+                callbacks: null
+                deprecated: false
+                security: null
+                servers: null
+            }
+            post: class Operation {
+                tags: [basic-error-controller]
+                summary: errorHtml
+                description: null
+                externalDocs: null
+                operationId: errorHtmlUsingPOST
+                parameters: null
+                requestBody: null
+                responses: class ApiResponses {
+                    {200=class ApiResponse {
+                        description: OK
+                        headers: null
+                        content: class Content {
+                            {text/html=class MediaType {
+                                schema: class Schema {
+                                    type: null
+                                    format: null
+                                    $ref: #/components/schemas/ModelAndView
+                                    description: null
+                                    title: null
+                                    multipleOf: null
+                                    maximum: null
+                                    exclusiveMaximum: null
+                                    minimum: null
+                                    exclusiveMinimum: null
+                                    maxLength: null
+                                    minLength: null
+                                    pattern: null
+                                    maxItems: null
+                                    minItems: null
+                                    uniqueItems: null
+                                    maxProperties: null
+                                    minProperties: null
+                                    required: null
+                                    not: null
+                                    properties: null
+                                    additionalProperties: null
+                                    nullable: null
+                                    readOnly: null
+                                    writeOnly: null
+                                    example: null
+                                    externalDocs: null
+                                    deprecated: null
+                                    discriminator: null
+                                    xml: null
+                                }
+                                examples: null
+                                example: null
+                                encoding: null
+                            }}
+                        }
+                        links: null
+                        extensions: {}
+                        $ref: null
+                    }, 201=class ApiResponse {
+                        description: Created
+                        headers: null
+                        content: class Content {
+                            {}
+                        }
+                        links: null
+                        extensions: {}
+                        $ref: null
+                    }, 401=class ApiResponse {
+                        description: Unauthorized
+                        headers: null
+                        content: class Content {
+                            {}
+                        }
+                        links: null
+                        extensions: {}
+                        $ref: null
+                    }, 403=class ApiResponse {
+                        description: Forbidden
+                        headers: null
+                        content: class Content {
+                            {}
+                        }
+                        links: null
+                        extensions: {}
+                        $ref: null
+                    }, 404=class ApiResponse {
+                        description: Not Found
+                        headers: null
+                        content: class Content {
+                            {}
+                        }
+                        links: null
+                        extensions: {}
+                        $ref: null
+                    }}
+                    extensions: null
+                }
+                callbacks: null
+                deprecated: false
+                security: null
+                servers: null
+            }
+            delete: class Operation {
+                tags: [basic-error-controller]
+                summary: errorHtml
+                description: null
+                externalDocs: null
+                operationId: errorHtmlUsingDELETE
+                parameters: null
+                requestBody: null
+                responses: class ApiResponses {
+                    {200=class ApiResponse {
+                        description: OK
+                        headers: null
+                        content: class Content {
+                            {text/html=class MediaType {
+                                schema: class Schema {
+                                    type: null
+                                    format: null
+                                    $ref: #/components/schemas/ModelAndView
+                                    description: null
+                                    title: null
+                                    multipleOf: null
+                                    maximum: null
+                                    exclusiveMaximum: null
+                                    minimum: null
+                                    exclusiveMinimum: null
+                                    maxLength: null
+                                    minLength: null
+                                    pattern: null
+                                    maxItems: null
+                                    minItems: null
+                                    uniqueItems: null
+                                    maxProperties: null
+                                    minProperties: null
+                                    required: null
+                                    not: null
+                                    properties: null
+                                    additionalProperties: null
+                                    nullable: null
+                                    readOnly: null
+                                    writeOnly: null
+                                    example: null
+                                    externalDocs: null
+                                    deprecated: null
+                                    discriminator: null
+                                    xml: null
+                                }
+                                examples: null
+                                example: null
+                                encoding: null
+                            }}
+                        }
+                        links: null
+                        extensions: {}
+                        $ref: null
+                    }, 204=class ApiResponse {
+                        description: No Content
+                        headers: null
+                        content: class Content {
+                            {}
+                        }
+                        links: null
+                        extensions: {}
+                        $ref: null
+                    }, 401=class ApiResponse {
+                        description: Unauthorized
+                        headers: null
+                        content: class Content {
+                            {}
+                        }
+                        links: null
+                        extensions: {}
+                        $ref: null
+                    }, 403=class ApiResponse {
+                        description: Forbidden
+                        headers: null
+                        content: class Content {
+                            {}
+                        }
+                        links: null
+                        extensions: {}
+                        $ref: null
+                    }}
+                    extensions: null
+                }
+                callbacks: null
+                deprecated: false
+                security: null
+                servers: null
+            }
+            options: class Operation {
+                tags: [basic-error-controller]
+                summary: errorHtml
+                description: null
+                externalDocs: null
+                operationId: errorHtmlUsingOPTIONS
+                parameters: null
+                requestBody: null
+                responses: class ApiResponses {
+                    {200=class ApiResponse {
+                        description: OK
+                        headers: null
+                        content: class Content {
+                            {text/html=class MediaType {
+                                schema: class Schema {
+                                    type: null
+                                    format: null
+                                    $ref: #/components/schemas/ModelAndView
+                                    description: null
+                                    title: null
+                                    multipleOf: null
+                                    maximum: null
+                                    exclusiveMaximum: null
+                                    minimum: null
+                                    exclusiveMinimum: null
+                                    maxLength: null
+                                    minLength: null
+                                    pattern: null
+                                    maxItems: null
+                                    minItems: null
+                                    uniqueItems: null
+                                    maxProperties: null
+                                    minProperties: null
+                                    required: null
+                                    not: null
+                                    properties: null
+                                    additionalProperties: null
+                                    nullable: null
+                                    readOnly: null
+                                    writeOnly: null
+                                    example: null
+                                    externalDocs: null
+                                    deprecated: null
+                                    discriminator: null
+                                    xml: null
+                                }
+                                examples: null
+                                example: null
+                                encoding: null
+                            }}
+                        }
+                        links: null
+                        extensions: {}
+                        $ref: null
+                    }, 204=class ApiResponse {
+                        description: No Content
+                        headers: null
+                        content: class Content {
+                            {}
+                        }
+                        links: null
+                        extensions: {}
+                        $ref: null
+                    }, 401=class ApiResponse {
+                        description: Unauthorized
+                        headers: null
+                        content: class Content {
+                            {}
+                        }
+                        links: null
+                        extensions: {}
+                        $ref: null
+                    }, 403=class ApiResponse {
+                        description: Forbidden
+                        headers: null
+                        content: class Content {
+                            {}
+                        }
+                        links: null
+                        extensions: {}
+                        $ref: null
+                    }}
+                    extensions: null
+                }
+                callbacks: null
+                deprecated: false
+                security: null
+                servers: null
+            }
+            head: class Operation {
+                tags: [basic-error-controller]
+                summary: errorHtml
+                description: null
+                externalDocs: null
+                operationId: errorHtmlUsingHEAD
+                parameters: null
+                requestBody: null
+                responses: class ApiResponses {
+                    {200=class ApiResponse {
+                        description: OK
+                        headers: null
+                        content: class Content {
+                            {text/html=class MediaType {
+                                schema: class Schema {
+                                    type: null
+                                    format: null
+                                    $ref: #/components/schemas/ModelAndView
+                                    description: null
+                                    title: null
+                                    multipleOf: null
+                                    maximum: null
+                                    exclusiveMaximum: null
+                                    minimum: null
+                                    exclusiveMinimum: null
+                                    maxLength: null
+                                    minLength: null
+                                    pattern: null
+                                    maxItems: null
+                                    minItems: null
+                                    uniqueItems: null
+                                    maxProperties: null
+                                    minProperties: null
+                                    required: null
+                                    not: null
+                                    properties: null
+                                    additionalProperties: null
+                                    nullable: null
+                                    readOnly: null
+                                    writeOnly: null
+                                    example: null
+                                    externalDocs: null
+                                    deprecated: null
+                                    discriminator: null
+                                    xml: null
+                                }
+                                examples: null
+                                example: null
+                                encoding: null
+                            }}
+                        }
+                        links: null
+                        extensions: {}
+                        $ref: null
+                    }, 204=class ApiResponse {
+                        description: No Content
+                        headers: null
+                        content: class Content {
+                            {}
+                        }
+                        links: null
+                        extensions: {}
+                        $ref: null
+                    }, 401=class ApiResponse {
+                        description: Unauthorized
+                        headers: null
+                        content: class Content {
+                            {}
+                        }
+                        links: null
+                        extensions: {}
+                        $ref: null
+                    }, 403=class ApiResponse {
+                        description: Forbidden
+                        headers: null
+                        content: class Content {
+                            {}
+                        }
+                        links: null
+                        extensions: {}
+                        $ref: null
+                    }}
+                    extensions: null
+                }
+                callbacks: null
+                deprecated: false
+                security: null
+                servers: null
+            }
+            patch: class Operation {
+                tags: [basic-error-controller]
+                summary: errorHtml
+                description: null
+                externalDocs: null
+                operationId: errorHtmlUsingPATCH
+                parameters: null
+                requestBody: null
+                responses: class ApiResponses {
+                    {200=class ApiResponse {
+                        description: OK
+                        headers: null
+                        content: class Content {
+                            {text/html=class MediaType {
+                                schema: class Schema {
+                                    type: null
+                                    format: null
+                                    $ref: #/components/schemas/ModelAndView
+                                    description: null
+                                    title: null
+                                    multipleOf: null
+                                    maximum: null
+                                    exclusiveMaximum: null
+                                    minimum: null
+                                    exclusiveMinimum: null
+                                    maxLength: null
+                                    minLength: null
+                                    pattern: null
+                                    maxItems: null
+                                    minItems: null
+                                    uniqueItems: null
+                                    maxProperties: null
+                                    minProperties: null
+                                    required: null
+                                    not: null
+                                    properties: null
+                                    additionalProperties: null
+                                    nullable: null
+                                    readOnly: null
+                                    writeOnly: null
+                                    example: null
+                                    externalDocs: null
+                                    deprecated: null
+                                    discriminator: null
+                                    xml: null
+                                }
+                                examples: null
+                                example: null
+                                encoding: null
+                            }}
+                        }
+                        links: null
+                        extensions: {}
+                        $ref: null
+                    }, 204=class ApiResponse {
+                        description: No Content
+                        headers: null
+                        content: class Content {
+                            {}
+                        }
+                        links: null
+                        extensions: {}
+                        $ref: null
+                    }, 401=class ApiResponse {
+                        description: Unauthorized
+                        headers: null
+                        content: class Content {
+                            {}
+                        }
+                        links: null
+                        extensions: {}
+                        $ref: null
+                    }, 403=class ApiResponse {
+                        description: Forbidden
+                        headers: null
+                        content: class Content {
+                            {}
+                        }
+                        links: null
+                        extensions: {}
+                        $ref: null
+                    }}
+                    extensions: null
+                }
+                callbacks: null
+                deprecated: false
+                security: null
+                servers: null
+            }
+            trace: null
+            servers: null
+            parameters: null
+            $ref: null
+        }, /getEmployee=class PathItem {
+            summary: null
+            description: null
+            get: class Operation {
+                tags: [index-controller]
+                summary: To get the employee
+                description: null
+                externalDocs: null
+                operationId: getEmployeeUsingGET
+                parameters: null
+                requestBody: null
+                responses: class ApiResponses {
+                    {200=class ApiResponse {
+                        description: OK
+                        headers: null
+                        content: class Content {
+                            {*/*=class MediaType {
+                                schema: class Schema {
+                                    type: null
+                                    format: null
+                                    $ref: #/components/schemas/Employee
+                                    description: null
+                                    title: null
+                                    multipleOf: null
+                                    maximum: null
+                                    exclusiveMaximum: null
+                                    minimum: null
+                                    exclusiveMinimum: null
+                                    maxLength: null
+                                    minLength: null
+                                    pattern: null
+                                    maxItems: null
+                                    minItems: null
+                                    uniqueItems: null
+                                    maxProperties: null
+                                    minProperties: null
+                                    required: null
+                                    not: null
+                                    properties: null
+                                    additionalProperties: null
+                                    nullable: null
+                                    readOnly: null
+                                    writeOnly: null
+                                    example: null
+                                    externalDocs: null
+                                    deprecated: null
+                                    discriminator: null
+                                    xml: null
+                                }
+                                examples: null
+                                example: null
+                                encoding: null
+                            }}
+                        }
+                        links: null
+                        extensions: {}
+                        $ref: null
+                    }, 401=class ApiResponse {
+                        description: Unauthorized
+                        headers: null
+                        content: class Content {
+                            {}
+                        }
+                        links: null
+                        extensions: {}
+                        $ref: null
+                    }, 403=class ApiResponse {
+                        description: Forbidden
+                        headers: null
+                        content: class Content {
+                            {}
+                        }
+                        links: null
+                        extensions: {}
+                        $ref: null
+                    }, 404=class ApiResponse {
+                        description: Not Found
+                        headers: null
+                        content: class Content {
+                            {}
+                        }
+                        links: null
+                        extensions: {}
+                        $ref: null
+                    }}
+                    extensions: null
+                }
+                callbacks: null
+                deprecated: false
+                security: null
+                servers: null
+            }
+            put: null
+            post: null
+            delete: null
+            options: null
+            head: null
+            patch: null
+            trace: null
+            servers: null
+            parameters: null
+            $ref: null
+        }, /insertEmployee/{id}/{name}=class PathItem {
+            summary: null
+            description: null
+            get: null
+            put: null
+            post: class Operation {
+                tags: [index-controller]
+                summary: To post the employee
+                description: null
+                externalDocs: null
+                operationId: insertEmployeeUsingPOST
+                parameters: [class Parameter {
+                    name: id
+                    in: path
+                    description: id
+                    required: true
+                    deprecated: null
+                    allowEmptyValue: null
+                    style: null
+                    explode: null
+                    allowReserved: null
+                    schema: class StringSchema {
+                        class Schema {
+                            type: string
+                            format: null
+                            $ref: null
+                            description: null
+                            title: null
+                            multipleOf: null
+                            maximum: null
+                            exclusiveMaximum: null
+                            minimum: null
+                            exclusiveMinimum: null
+                            maxLength: null
+                            minLength: null
+                            pattern: null
+                            maxItems: null
+                            minItems: null
+                            uniqueItems: null
+                            maxProperties: null
+                            minProperties: null
+                            required: null
+                            not: null
+                            properties: null
+                            additionalProperties: null
+                            nullable: null
+                            readOnly: null
+                            writeOnly: null
+                            example: null
+                            externalDocs: null
+                            deprecated: null
+                            discriminator: null
+                            xml: null
+                        }
+                    }
+                    examples: null
+                    example: null
+                    content: null
+                    $ref: null
+                }, class Parameter {
+                    name: name
+                    in: path
+                    description: name
+                    required: true
+                    deprecated: null
+                    allowEmptyValue: null
+                    style: null
+                    explode: null
+                    allowReserved: null
+                    schema: class StringSchema {
+                        class Schema {
+                            type: string
+                            format: null
+                            $ref: null
+                            description: null
+                            title: null
+                            multipleOf: null
+                            maximum: null
+                            exclusiveMaximum: null
+                            minimum: null
+                            exclusiveMinimum: null
+                            maxLength: null
+                            minLength: null
+                            pattern: null
+                            maxItems: null
+                            minItems: null
+                            uniqueItems: null
+                            maxProperties: null
+                            minProperties: null
+                            required: null
+                            not: null
+                            properties: null
+                            additionalProperties: null
+                            nullable: null
+                            readOnly: null
+                            writeOnly: null
+                            example: null
+                            externalDocs: null
+                            deprecated: null
+                            discriminator: null
+                            xml: null
+                        }
+                    }
+                    examples: null
+                    example: null
+                    content: null
+                    $ref: null
+                }]
+                requestBody: null
+                responses: class ApiResponses {
+                    {200=class ApiResponse {
+                        description: OK
+                        headers: null
+                        content: class Content {
+                            {*/*=class MediaType {
+                                schema: class Schema {
+                                    type: null
+                                    format: null
+                                    $ref: #/components/schemas/Employee
+                                    description: null
+                                    title: null
+                                    multipleOf: null
+                                    maximum: null
+                                    exclusiveMaximum: null
+                                    minimum: null
+                                    exclusiveMinimum: null
+                                    maxLength: null
+                                    minLength: null
+                                    pattern: null
+                                    maxItems: null
+                                    minItems: null
+                                    uniqueItems: null
+                                    maxProperties: null
+                                    minProperties: null
+                                    required: null
+                                    not: null
+                                    properties: null
+                                    additionalProperties: null
+                                    nullable: null
+                                    readOnly: null
+                                    writeOnly: null
+                                    example: null
+                                    externalDocs: null
+                                    deprecated: null
+                                    discriminator: null
+                                    xml: null
+                                }
+                                examples: null
+                                example: null
+                                encoding: null
+                            }}
+                        }
+                        links: null
+                        extensions: {}
+                        $ref: null
+                    }, 201=class ApiResponse {
+                        description: Created
+                        headers: null
+                        content: class Content {
+                            {}
+                        }
+                        links: null
+                        extensions: {}
+                        $ref: null
+                    }, 401=class ApiResponse {
+                        description: Unauthorized
+                        headers: null
+                        content: class Content {
+                            {}
+                        }
+                        links: null
+                        extensions: {}
+                        $ref: null
+                    }, 403=class ApiResponse {
+                        description: Forbidden
+                        headers: null
+                        content: class Content {
+                            {}
+                        }
+                        links: null
+                        extensions: {}
+                        $ref: null
+                    }, 404=class ApiResponse {
+                        description: Not Found
+                        headers: null
+                        content: class Content {
+                            {}
+                        }
+                        links: null
+                        extensions: {}
+                        $ref: null
+                    }}
+                    extensions: null
+                }
+                callbacks: null
+                deprecated: false
+                security: null
+                servers: null
+            }
+            delete: null
+            options: null
+            head: null
+            patch: null
+            trace: null
+            servers: null
+            parameters: null
+            $ref: null
+        }, /updateEmployee/{id}/{name}=class PathItem {
+            summary: null
+            description: null
+            get: null
+            put: class Operation {
+                tags: [index-controller]
+                summary: To post the employee
+                description: null
+                externalDocs: null
+                operationId: updateEmployeeUsingPUT
+                parameters: [class Parameter {
+                    name: id
+                    in: path
+                    description: id
+                    required: true
+                    deprecated: null
+                    allowEmptyValue: null
+                    style: null
+                    explode: null
+                    allowReserved: null
+                    schema: class StringSchema {
+                        class Schema {
+                            type: string
+                            format: null
+                            $ref: null
+                            description: null
+                            title: null
+                            multipleOf: null
+                            maximum: null
+                            exclusiveMaximum: null
+                            minimum: null
+                            exclusiveMinimum: null
+                            maxLength: null
+                            minLength: null
+                            pattern: null
+                            maxItems: null
+                            minItems: null
+                            uniqueItems: null
+                            maxProperties: null
+                            minProperties: null
+                            required: null
+                            not: null
+                            properties: null
+                            additionalProperties: null
+                            nullable: null
+                            readOnly: null
+                            writeOnly: null
+                            example: null
+                            externalDocs: null
+                            deprecated: null
+                            discriminator: null
+                            xml: null
+                        }
+                    }
+                    examples: null
+                    example: null
+                    content: null
+                    $ref: null
+                }, class Parameter {
+                    name: name
+                    in: path
+                    description: name
+                    required: true
+                    deprecated: null
+                    allowEmptyValue: null
+                    style: null
+                    explode: null
+                    allowReserved: null
+                    schema: class StringSchema {
+                        class Schema {
+                            type: string
+                            format: null
+                            $ref: null
+                            description: null
+                            title: null
+                            multipleOf: null
+                            maximum: null
+                            exclusiveMaximum: null
+                            minimum: null
+                            exclusiveMinimum: null
+                            maxLength: null
+                            minLength: null
+                            pattern: null
+                            maxItems: null
+                            minItems: null
+                            uniqueItems: null
+                            maxProperties: null
+                            minProperties: null
+                            required: null
+                            not: null
+                            properties: null
+                            additionalProperties: null
+                            nullable: null
+                            readOnly: null
+                            writeOnly: null
+                            example: null
+                            externalDocs: null
+                            deprecated: null
+                            discriminator: null
+                            xml: null
+                        }
+                    }
+                    examples: null
+                    example: null
+                    content: null
+                    $ref: null
+                }]
+                requestBody: null
+                responses: class ApiResponses {
+                    {200=class ApiResponse {
+                        description: OK
+                        headers: null
+                        content: class Content {
+                            {*/*=class MediaType {
+                                schema: class Schema {
+                                    type: null
+                                    format: null
+                                    $ref: #/components/schemas/Employee
+                                    description: null
+                                    title: null
+                                    multipleOf: null
+                                    maximum: null
+                                    exclusiveMaximum: null
+                                    minimum: null
+                                    exclusiveMinimum: null
+                                    maxLength: null
+                                    minLength: null
+                                    pattern: null
+                                    maxItems: null
+                                    minItems: null
+                                    uniqueItems: null
+                                    maxProperties: null
+                                    minProperties: null
+                                    required: null
+                                    not: null
+                                    properties: null
+                                    additionalProperties: null
+                                    nullable: null
+                                    readOnly: null
+                                    writeOnly: null
+                                    example: null
+                                    externalDocs: null
+                                    deprecated: null
+                                    discriminator: null
+                                    xml: null
+                                }
+                                examples: null
+                                example: null
+                                encoding: null
+                            }}
+                        }
+                        links: null
+                        extensions: {}
+                        $ref: null
+                    }, 201=class ApiResponse {
+                        description: Created
+                        headers: null
+                        content: class Content {
+                            {}
+                        }
+                        links: null
+                        extensions: {}
+                        $ref: null
+                    }, 401=class ApiResponse {
+                        description: Unauthorized
+                        headers: null
+                        content: class Content {
+                            {}
+                        }
+                        links: null
+                        extensions: {}
+                        $ref: null
+                    }, 403=class ApiResponse {
+                        description: Forbidden
+                        headers: null
+                        content: class Content {
+                            {}
+                        }
+                        links: null
+                        extensions: {}
+                        $ref: null
+                    }, 404=class ApiResponse {
+                        description: Not Found
+                        headers: null
+                        content: class Content {
+                            {}
+                        }
+                        links: null
+                        extensions: {}
+                        $ref: null
+                    }}
+                    extensions: null
+                }
+                callbacks: null
+                deprecated: false
+                security: null
+                servers: null
+            }
+            post: null
+            delete: null
+            options: null
+            head: null
+            patch: null
+            trace: null
+            servers: null
+            parameters: null
+            $ref: null
+        }}
+    }
+    components: class Components {
+        schemas: {Employee=class ObjectSchema {
+            class Schema {
+                type: object
+                format: null
+                $ref: null
+                description: This is employee model
+                title: Employee
+                multipleOf: null
+                maximum: null
+                exclusiveMaximum: null
+                minimum: null
+                exclusiveMinimum: null
+                maxLength: null
+                minLength: null
+                pattern: null
+                maxItems: null
+                minItems: null
+                uniqueItems: null
+                maxProperties: null
+                minProperties: null
+                required: [id, name]
+                not: null
+                properties: {id=class StringSchema {
+                    class Schema {
+                        type: string
+                        format: null
+                        $ref: null
+                        description: 1
+                        title: null
+                        multipleOf: null
+                        maximum: null
+                        exclusiveMaximum: null
+                        minimum: null
+                        exclusiveMinimum: null
+                        maxLength: null
+                        minLength: null
+                        pattern: null
+                        maxItems: null
+                        minItems: null
+                        uniqueItems: null
+                        maxProperties: null
+                        minProperties: null
+                        required: null
+                        not: null
+                        properties: null
+                        additionalProperties: null
+                        nullable: null
+                        readOnly: null
+                        writeOnly: null
+                        example: null
+                        externalDocs: null
+                        deprecated: null
+                        discriminator: null
+                        xml: null
+                    }
+                }, name=class StringSchema {
+                    class Schema {
+                        type: string
+                        format: null
+                        $ref: null
+                        description: siddhu
+                        title: null
+                        multipleOf: null
+                        maximum: null
+                        exclusiveMaximum: null
+                        minimum: null
+                        exclusiveMinimum: null
+                        maxLength: null
+                        minLength: null
+                        pattern: null
+                        maxItems: null
+                        minItems: null
+                        uniqueItems: null
+                        maxProperties: null
+                        minProperties: null
+                        required: null
+                        not: null
+                        properties: null
+                        additionalProperties: null
+                        nullable: null
+                        readOnly: null
+                        writeOnly: null
+                        example: null
+                        externalDocs: null
+                        deprecated: null
+                        discriminator: null
+                        xml: null
+                    }
+                }}
+                additionalProperties: null
+                nullable: null
+                readOnly: null
+                writeOnly: null
+                example: null
+                externalDocs: null
+                deprecated: null
+                discriminator: null
+                xml: null
+            }
+        }, ModelAndView=class ObjectSchema {
+            class Schema {
+                type: object
+                format: null
+                $ref: null
+                description: null
+                title: ModelAndView
+                multipleOf: null
+                maximum: null
+                exclusiveMaximum: null
+                minimum: null
+                exclusiveMinimum: null
+                maxLength: null
+                minLength: null
+                pattern: null
+                maxItems: null
+                minItems: null
+                uniqueItems: null
+                maxProperties: null
+                minProperties: null
+                required: null
+                not: null
+                properties: {empty=class BooleanSchema {
+                    class Schema {
+                        type: boolean
+                        format: null
+                        $ref: null
+                        description: null
+                        title: null
+                        multipleOf: null
+                        maximum: null
+                        exclusiveMaximum: null
+                        minimum: null
+                        exclusiveMinimum: null
+                        maxLength: null
+                        minLength: null
+                        pattern: null
+                        maxItems: null
+                        minItems: null
+                        uniqueItems: null
+                        maxProperties: null
+                        minProperties: null
+                        required: null
+                        not: null
+                        properties: null
+                        additionalProperties: null
+                        nullable: null
+                        readOnly: null
+                        writeOnly: null
+                        example: null
+                        externalDocs: null
+                        deprecated: null
+                        discriminator: null
+                        xml: null
+                    }
+                }, model=class ObjectSchema {
+                    class Schema {
+                        type: object
+                        format: null
+                        $ref: null
+                        description: null
+                        title: null
+                        multipleOf: null
+                        maximum: null
+                        exclusiveMaximum: null
+                        minimum: null
+                        exclusiveMinimum: null
+                        maxLength: null
+                        minLength: null
+                        pattern: null
+                        maxItems: null
+                        minItems: null
+                        uniqueItems: null
+                        maxProperties: null
+                        minProperties: null
+                        required: null
+                        not: null
+                        properties: {}
+                        additionalProperties: null
+                        nullable: null
+                        readOnly: null
+                        writeOnly: null
+                        example: null
+                        externalDocs: null
+                        deprecated: null
+                        discriminator: null
+                        xml: null
+                    }
+                }, modelMap=class MapSchema {
+                    class Schema {
+                        type: object
+                        format: null
+                        $ref: null
+                        description: null
+                        title: null
+                        multipleOf: null
+                        maximum: null
+                        exclusiveMaximum: null
+                        minimum: null
+                        exclusiveMinimum: null
+                        maxLength: null
+                        minLength: null
+                        pattern: null
+                        maxItems: null
+                        minItems: null
+                        uniqueItems: null
+                        maxProperties: null
+                        minProperties: null
+                        required: null
+                        not: null
+                        properties: null
+                        additionalProperties: class ObjectSchema {
+                            class Schema {
+                                type: object
+                                format: null
+                                $ref: null
+                                description: null
+                                title: null
+                                multipleOf: null
+                                maximum: null
+                                exclusiveMaximum: null
+                                minimum: null
+                                exclusiveMinimum: null
+                                maxLength: null
+                                minLength: null
+                                pattern: null
+                                maxItems: null
+                                minItems: null
+                                uniqueItems: null
+                                maxProperties: null
+                                minProperties: null
+                                required: null
+                                not: null
+                                properties: {}
+                                additionalProperties: null
+                                nullable: null
+                                readOnly: null
+                                writeOnly: null
+                                example: null
+                                externalDocs: null
+                                deprecated: null
+                                discriminator: null
+                                xml: null
+                            }
+                        }
+                        nullable: null
+                        readOnly: null
+                        writeOnly: null
+                        example: null
+                        externalDocs: null
+                        deprecated: null
+                        discriminator: null
+                        xml: null
+                    }
+                }, reference=class BooleanSchema {
+                    class Schema {
+                        type: boolean
+                        format: null
+                        $ref: null
+                        description: null
+                        title: null
+                        multipleOf: null
+                        maximum: null
+                        exclusiveMaximum: null
+                        minimum: null
+                        exclusiveMinimum: null
+                        maxLength: null
+                        minLength: null
+                        pattern: null
+                        maxItems: null
+                        minItems: null
+                        uniqueItems: null
+                        maxProperties: null
+                        minProperties: null
+                        required: null
+                        not: null
+                        properties: null
+                        additionalProperties: null
+                        nullable: null
+                        readOnly: null
+                        writeOnly: null
+                        example: null
+                        externalDocs: null
+                        deprecated: null
+                        discriminator: null
+                        xml: null
+                    }
+                }, status=class StringSchema {
+                    class Schema {
+                        type: string
+                        format: null
+                        $ref: null
+                        description: null
+                        title: null
+                        multipleOf: null
+                        maximum: null
+                        exclusiveMaximum: null
+                        minimum: null
+                        exclusiveMinimum: null
+                        maxLength: null
+                        minLength: null
+                        pattern: null
+                        maxItems: null
+                        minItems: null
+                        uniqueItems: null
+                        maxProperties: null
+                        minProperties: null
+                        required: null
+                        not: null
+                        properties: null
+                        additionalProperties: null
+                        nullable: null
+                        readOnly: null
+                        writeOnly: null
+                        example: null
+                        externalDocs: null
+                        deprecated: null
+                        discriminator: null
+                        xml: null
+                    }
+                }, view=class Schema {
+                    type: null
+                    format: null
+                    $ref: #/components/schemas/View
+                    description: null
+                    title: null
+                    multipleOf: null
+                    maximum: null
+                    exclusiveMaximum: null
+                    minimum: null
+                    exclusiveMinimum: null
+                    maxLength: null
+                    minLength: null
+                    pattern: null
+                    maxItems: null
+                    minItems: null
+                    uniqueItems: null
+                    maxProperties: null
+                    minProperties: null
+                    required: null
+                    not: null
+                    properties: null
+                    additionalProperties: null
+                    nullable: null
+                    readOnly: null
+                    writeOnly: null
+                    example: null
+                    externalDocs: null
+                    deprecated: null
+                    discriminator: null
+                    xml: null
+                }, viewName=class StringSchema {
+                    class Schema {
+                        type: string
+                        format: null
+                        $ref: null
+                        description: null
+                        title: null
+                        multipleOf: null
+                        maximum: null
+                        exclusiveMaximum: null
+                        minimum: null
+                        exclusiveMinimum: null
+                        maxLength: null
+                        minLength: null
+                        pattern: null
+                        maxItems: null
+                        minItems: null
+                        uniqueItems: null
+                        maxProperties: null
+                        minProperties: null
+                        required: null
+                        not: null
+                        properties: null
+                        additionalProperties: null
+                        nullable: null
+                        readOnly: null
+                        writeOnly: null
+                        example: null
+                        externalDocs: null
+                        deprecated: null
+                        discriminator: null
+                        xml: null
+                    }
+                }}
+                additionalProperties: null
+                nullable: null
+                readOnly: null
+                writeOnly: null
+                example: null
+                externalDocs: null
+                deprecated: null
+                discriminator: null
+                xml: null
+            }
+        }, View=class ObjectSchema {
+            class Schema {
+                type: object
+                format: null
+                $ref: null
+                description: null
+                title: View
+                multipleOf: null
+                maximum: null
+                exclusiveMaximum: null
+                minimum: null
+                exclusiveMinimum: null
+                maxLength: null
+                minLength: null
+                pattern: null
+                maxItems: null
+                minItems: null
+                uniqueItems: null
+                maxProperties: null
+                minProperties: null
+                required: null
+                not: null
+                properties: {contentType=class StringSchema {
+                    class Schema {
+                        type: string
+                        format: null
+                        $ref: null
+                        description: null
+                        title: null
+                        multipleOf: null
+                        maximum: null
+                        exclusiveMaximum: null
+                        minimum: null
+                        exclusiveMinimum: null
+                        maxLength: null
+                        minLength: null
+                        pattern: null
+                        maxItems: null
+                        minItems: null
+                        uniqueItems: null
+                        maxProperties: null
+                        minProperties: null
+                        required: null
+                        not: null
+                        properties: null
+                        additionalProperties: null
+                        nullable: null
+                        readOnly: null
+                        writeOnly: null
+                        example: null
+                        externalDocs: null
+                        deprecated: null
+                        discriminator: null
+                        xml: null
+                    }
+                }}
+                additionalProperties: null
+                nullable: null
+                readOnly: null
+                writeOnly: null
+                example: null
+                externalDocs: null
+                deprecated: null
+                discriminator: null
+                xml: null
+            }
+        }}
+        responses: null
+        parameters: null
+        examples: null
+        requestBodies: null
+        headers: null
+        securitySchemes: null
+        links: null
+        callbacks: null
+    }
+}
